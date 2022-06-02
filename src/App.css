@@ -112,12 +112,11 @@
 .headerPart {
   position: relative;
   height: auto;
-  background: rgb(7, 56, 82);
   background: linear-gradient(
     180deg,
-    rgba(7, 56, 82, 1) 0%,
-    rgba(10, 83, 124, 1) 0%,
-    rgba(0, 137, 210, 1) 88%
+    rgba(149, 202, 231, .7) 5%,
+    rgba(98, 150, 182, .8) 40%,
+    rgba(186, 243, 191, .1) 88%
   );
   background-attachment: fixed;
 }
@@ -145,8 +144,8 @@
 /* -----------------------------  search box desing --------------------------------- */
 
 .myButton {
-  background: linear-gradient(to bottom, #0972aa 5%, #022b41 100%);
-  background-color: #0972aa;
+  /* background: linear-gradient(to left, rgba(43, 93, 119, 0.781) 5%, #3c98ca 100%); */
+  background: #0198E9;
   border-radius: 5px;
   display: inline-block;
   cursor: pointer;
@@ -164,8 +163,8 @@
   -moz-box-shadow: 0 2px 15px -5px #039be5;
 }
 .myButton:hover {
-  background: linear-gradient(to bottom, #022b41 5%, #0972aa 100%);
-  background-color: #0972aa;
+  /* background: linear-gradient(to bottom, #022b41 5%, #0972aa 100%); */
+  background: #0198E9;
   box-shadow: 0 2px 15px -5px #039be5;
   -webkit-box-shadow: 0 2px 15px -5px #039be5;
   -moz-box-shadow: 0 2px 15px -5px #039be5;

@@ -38,14 +38,14 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     left: "-3%",
     top: 0,
-    background: "linear-gradient(to bottom, #0972aa 5%, #022b41 100%)",
-    backgroundColor: "#0972aa",
+    background: "linear-gradient(to bottom, rgba(0,0,0, .1) 5%, #022b41 100%)",
+    // backgroundColor: "#0972aa",
     zIndex: 999,
     padding: 0,
     minWidth: 40,
     "&:hover": {
-      background: "linear-gradient(to bottom, #022b41 5%, #0972aa 100%)",
-      backgroundColor: "#0972aa",
+      background: "linear-gradient(to top, rgba(0,0,0, .1) 5%, #022b41 100%)",
+      // backgroundColor: "#0972aa",
       boxShadow: "0 2px 15px -5px #039be5",
     },
   },
@@ -126,7 +126,7 @@ const TopBar = () => {
   };
 
   const adminSignOutHandler = () => {
-    history.push('/login');
+    history.push("/login");
     dispatch(adminSignout());
   };
 

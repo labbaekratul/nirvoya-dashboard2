@@ -1,4 +1,5 @@
 import { CircularProgress } from "@material-ui/core";
+import nirvoyaLogo from "../../Asset/nirvoya-logo.png";
 import React, { useEffect, useState } from "react";
 import { FaAngleDown, FaAngleRight, FaRegCircle } from "react-icons/fa";
 import {
@@ -21,7 +22,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { Link, useRouteMatch } from "react-router-dom";
 import defaultImage from "../../Asset/default.png";
-import logo from "../../Asset/Oikko-White.png";
 import { adminSignout, detailsAdmin } from "../../redux/Actions/adminActions";
 import styles from "./SideBar.module.css";
 
@@ -108,7 +108,7 @@ const SideBar = () => {
         {/* logo */}
         <div className={`${styles.SideBarLogo}`}>
           <Link to="/">
-            <img className="my-4" src={logo} alt="logo" />
+            <img className="my-4" src={nirvoyaLogo} alt="logo" />
           </Link>
         </div>
 
