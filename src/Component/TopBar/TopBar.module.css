@@ -1,0 +1,9 @@
+.topbar {
+  background: rgb(2, 52, 79);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 52, 79, 1) 0%,
+    rgba(8, 84, 125, 1) 66%,
+    rgba(8, 117, 176, 1) 100%
+  );
+}

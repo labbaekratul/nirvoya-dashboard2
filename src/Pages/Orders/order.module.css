@@ -1,0 +1,31 @@
+.entrepreneur img {
+  max-width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.entrepreneur a {
+  font-size: 16px;
+  font-weight: 700;
+  color: #011a28;
+  transition: ease-in 0.3s;
+}
+.entrepreneur a:hover {
+  text-decoration: underline !important;
+}
+.quantity {
+  display: inline-block;
+  border: 1px solid #999;
+}
+.quantity b {
+  padding: 2px 6px;
+  cursor: pointer;
+}
+.decrease {
+  font-size: 16px;
+}
+.quantityItem {
+  font-size: 16px;
+}
+.increase {
+  font-size: 16px;
+}

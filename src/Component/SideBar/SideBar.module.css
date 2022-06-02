@@ -1,0 +1,114 @@
+.sideBarShadow {
+  position: relative;
+  z-index: 0;
+}
+.positionFixed {
+  position: fixed;
+  width: 14%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  box-shadow: 0 0.5rem 1rem rgb(24 116 255 / 26%) !important;
+  background-color: #eaecee;
+}
+.SideBarLogo {
+  background-color: #023652;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
+    0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+}
+.SideBarLogo img {
+  width: 80px;
+}
+.adminUser {
+  text-align: center;
+  border-bottom: 1px solid #8d8b8b;
+  padding: 20px;
+  margin: 5px 20px;
+}
+.adminUser img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.adminUser h5 {
+  margin-top: 10px !important;
+}
+.nav .menuList {
+  transition: ease-in 0.2s;
+}
+.nav .menuList:hover {
+  background: rgba(80, 80, 80, 0.05);
+  border-radius: 0 24px 24px 0;
+  margin-right: 10px;
+}
+.nav .menuList:hover button {
+  background: rgba(80, 80, 80, 0.05);
+  border-radius: 0 24px 24px 0;
+  margin-right: 10px;
+}
+.nav .dropDownList:hover {
+  background: rgba(80, 80, 80, 0.05);
+  border-radius: 0 24px 24px 0;
+}
+.nav .dropDownList:hover button {
+  background: rgba(80, 80, 80, 0);
+  border-radius: 0 24px 24px 0;
+}
+.nav_link {
+  color: #999 !important;
+  font-size: 18px;
+  font-weight: 600;
+  transition: ease-in 0.3s;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  border: none;
+}
+.nav_link:hover {
+  color: #02344f !important;
+  letter-spacing: 0.8px;
+}
+.dropDown_nav_link {
+  color: #999 !important;
+  font-size: 13px;
+  font-weight: 600;
+  transition: ease-in 0.3s;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  border: none;
+}
+.dropDown_nav_link:hover {
+  color: #02344f !important;
+  letter-spacing: 0.8px;
+}
+.FaRegCircle {
+  font-size: 9px !important;
+  margin-right: 5px;
+  margin-bottom: 3px;
+}
+.active_color {
+  color: #02344f !important;
+  background: rgba(80, 80, 80, 0.05);
+  border-radius: 0 24px 24px 0;
+  margin-right: 15px;
+}
+.navLink {
+  max-height: 700px;
+  overflow-y: scroll;
+}
+.navLink::-webkit-scrollbar {
+  width: 8px;
+}
+
+.navLink::-webkit-scrollbar-thumb {
+  background: #c5c4c4;
+  border-radius: 40px;
+}
+
+.navLink::-webkit-scrollbar-track {
+  background-color: #ececec;
+}

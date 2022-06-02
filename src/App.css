@@ -1,0 +1,412 @@
+.col__2 {
+  width: 14%;
+}
+.col__10 {
+  width: 86%;
+}
+#dashboard_body {
+  padding: 0;
+  background-color: #fafafa;
+}
+.ds_body {
+  padding: 30px;
+  position: absolute;
+  width: 86% !important;
+  top: 7%;
+  overflow-x: hidden;
+}
+.LinkColor {
+  color: #02344f;
+  -webkit-transition: ease-in 0.2s;
+  transition: ease-in 0.2s;
+}
+.LinkColor:hover {
+  text-decoration: underline !important;
+  color: #02344f;
+}
+.button_color {
+  color: #969595;
+  border: none;
+  background-color: transparent;
+  transition: ease-in 0.2s;
+}
+.button_color:hover {
+  border-radius: 3px;
+  color: #ffffff !important;
+  background-color: #02344f;
+}
+.btn-outline-danger {
+  color: #969595;
+  border: none;
+  background: transparent;
+  transition: ease-in 0.2s;
+}
+.btn-outline-danger:hover {
+  border-radius: 3px;
+}
+.ka-paging {
+  margin-top: 15px;
+}
+.ka-paging-page-index,
+.ka-paging-size {
+  padding: 0 !important;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+}
+.ka-paging-page-index-active,
+.ka-paging-size-active {
+  background-color: #969595 !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+.ka-paging-pages {
+  justify-content: center;
+}
+.shadow-lg {
+  box-shadow: 0 2px 15px -5px #039be5 !important;
+}
+/* -----------------------------  search box desing --------------------------------- */
+.adminSearch input {
+  outline: none;
+}
+.adminSearch input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+  font-family: inherit;
+  font-size: 100%;
+}
+.adminSearch input::-webkit-search-decoration,
+.adminSearch input::-webkit-search-cancel-button {
+  display: none;
+}
+.adminSearch input[type="search"] {
+  background: #f7f7f7
+    url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat
+    9px center;
+  border: solid 1px #f7f7f7;
+  padding: 5px 10px 5px 32px;
+  width: 100px;
+  -webkit-border-radius: 10em;
+  -moz-border-radius: 10em;
+  border-radius: 10em;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.adminSearch input[type="search"]:focus {
+  width: 300px;
+  background-color: #fff;
+  border-color: #ccc;
+  -webkit-box-shadow: 0 2px 15px -5px #039be5;
+  -moz-box-shadow: 0 2px 15px -5px #039be5;
+  box-shadow: 0 2px 15px -5px #039be5;
+}
+.adminSearch input:-moz-placeholder {
+  color: #999;
+}
+.adminSearch input::-webkit-input-placeholder {
+  color: #999;
+}
+/* --------------------------------  breadcumb and admin header  ------------------------------------ */
+.headerPart {
+  position: relative;
+  height: auto;
+  background: rgb(7, 56, 82);
+  background: linear-gradient(
+    180deg,
+    rgba(7, 56, 82, 1) 0%,
+    rgba(10, 83, 124, 1) 0%,
+    rgba(0, 137, 210, 1) 88%
+  );
+  background-attachment: fixed;
+}
+.headerPart img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform: scale(1, 0.5);
+  bottom: -65px;
+  z-index: 0;
+}
+.breadcrumbPart h3 {
+  color: #fff !important;
+}
+.breadcrumbPart a {
+  color: #fff !important;
+}
+.breadcrumbPart nav ol li {
+  color: #ffffff80 !important;
+}
+.breadcrumbPart nav ol p {
+  color: #ffffff80 !important;
+}
+/* --------------------------------  breadcumb and admin header  ------------------------------------ */
+/* -----------------------------  search box desing --------------------------------- */
+
+.myButton {
+  background: linear-gradient(to bottom, #0972aa 5%, #022b41 100%);
+  background-color: #0972aa;
+  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff !important;
+  font-family: Arial;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 7px 20px !important;
+  text-decoration: none;
+  transition: ease-in-out 0.2s;
+  -webkit-transition: ease-in-out 0.2s;
+  border: none;
+  box-shadow: 0 2px 15px -5px #039be5;
+  -webkit-box-shadow: 0 2px 15px -5px #039be5;
+  -moz-box-shadow: 0 2px 15px -5px #039be5;
+}
+.myButton:hover {
+  background: linear-gradient(to bottom, #022b41 5%, #0972aa 100%);
+  background-color: #0972aa;
+  box-shadow: 0 2px 15px -5px #039be5;
+  -webkit-box-shadow: 0 2px 15px -5px #039be5;
+  -moz-box-shadow: 0 2px 15px -5px #039be5;
+}
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+.exportButton {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 7px 20px !important;
+  border-radius: 5px;
+  border: none;
+  transition: ease-in-out 0.2s;
+  -webkit-transition: ease-in-out 0.2s;
+}
+.exportButton:hover {
+  background-color: #fe696a !important;
+}
+.exportButton:hover a {
+  color: #fff !important;
+}
+.BiListPlus {
+  font-size: 25px;
+}
+.BiUndo {
+  font-size: 25px;
+}
+/* ---------------------------------- form Style -------------------------------------- */
+.formStyle {
+  justify-content: center;
+}
+.formStyle .form-control:focus {
+  box-shadow: none;
+  border-color: #02344f;
+}
+.formStyle .form-select:focus {
+  box-shadow: none;
+  border-color: #02344f;
+}
+.formStyle .form-check-input:focus {
+  border-color: #02344f;
+  box-shadow: none;
+}
+.formStyle .form-check-input:checked {
+  background-color: #02344f;
+  border-color: #02344f;
+}
+.formStyle .input-group-text {
+  background-color: transparent;
+}
+.formStyle textarea {
+  height: 130px !important;
+}
+.formStyle .form-control[type="file"] {
+  outline: none;
+  opacity: 0;
+}
+.formStyle .imageData {
+  width: 100%;
+  height: auto;
+}
+.formStyle .imageData img {
+  width: 100%;
+  height: 100%;
+}
+.formStyle .imageInput {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  z-index: 0;
+  color: #969595;
+  border: 2px solid #f6f8fa;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s all linear;
+  margin-right: 15px;
+}
+.formStyle .imageInput:hover {
+  color: #02344f;
+  transition: ease-in, 0.5s;
+}
+.formStyle .imageUploadIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  z-index: -1;
+}
+.imageUpload {
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+  transition: ease-in 0.3s;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  width: 100px;
+  height: 100px;
+}
+.formStyle .imageUpload:hover::before {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+}
+.imageUpload img {
+  border-radius: 5px;
+}
+.imageDelete {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  color: #02344f;
+  border: 1px solid #02344f;
+  font-size: 20px;
+  display: none;
+  transition: ease-in 0.2s;
+}
+.formStyle .imageUpload:hover .imageDelete {
+  display: block;
+  color: #fff;
+  border-color: #fff;
+  border-radius: 5px;
+}
+.imageDelete:hover {
+  background: #02344f;
+  color: #fff;
+  border: 1px solid #02344f !important;
+}
+.margin-right {
+  margin-right: 15px;
+}
+.margin-left {
+  margin-left: 15px;
+}
+.rdw-editor-main {
+  height: 300px !important;
+  border: 1px solid #ddd !important;
+  padding: 0 10px !important;
+  margin-bottom: 20px;
+}
+.css-1pahdxg-control {
+  box-shadow: 0 0 0 1px #02344f !important;
+  margin-bottom: 15px !important;
+}
+.css-1pahdxg-control:hover {
+  border-color: #02344f !important;
+}
+.css-1rhbuit-multiValue {
+  background-color: #02344f !important;
+  color: #fff !important;
+}
+.css-12jo7m5 {
+  color: #fff !important;
+}
+.css-xb97g8:hover {
+  background-color: transparent !important;
+  color: #fff !important;
+  cursor: pointer;
+}
+.css-g1d714-ValueContainer {
+  height: 50px;
+}
+.btnBrand {
+  border: 1px solid #02344f !important;
+  background: #02344f !important;
+  color: #fff !important;
+  opacity: 0.7;
+  padding: 7px 20px !important;
+  -webkit-transition: ease-in 0.3s !important;
+  transition: ease-in 0.3s !important;
+}
+.btnBrand:hover {
+  opacity: 1 !important;
+}
+.btnBrand .btn-check:focus + .btn,
+.btn:focus {
+  box-shadow: none !important;
+}
+.btn-outline-secondary:hover {
+  color: #fff;
+  background-color: #02344f !important;
+  border-color: #02344f !important;
+}
+.btn-outline-primary {
+  padding: 5px 8px !important;
+  font-size: 0.3rem !important;
+  color: #02344f !important;
+  border-color: #02344f !important;
+}
+.btn-outline-primary:hover {
+  background-color: #02344f !important;
+  color: #ffffff !important;
+}
+/* category */
+.ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+  border-color: #02344f;
+}
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input)
+  .ant-select-selector {
+  border-color: #02344f;
+  box-shadow: none;
+}
+.rc-tree-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #02344f;
+}
+/* category edit button */
+.adminBtnButton {
+  font-size: 16px;
+  color: #011a28 !important;
+  background: #f7f7f7;
+  padding: 8px 12px;
+  border: none !important;
+  transition: ease 0.2s all;
+  background: #f7f7f7;
+  border-radius: 5px;
+}
+.adminBtnButton:hover {
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+}
+.adminBtnButton:hover .pencilButton {
+  color: #42d697 !important;
+}
+.adminBtnButton:hover .trashButton {
+  color: #fe696a;
+}
+/* search button */
+.searchButton {
+  background-color: transparent;
+  border: 1px solid #02344f;
+  width: 80px;
+  height: 38px;
+  border-radius: 5px;
+}

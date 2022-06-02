@@ -1,0 +1,204 @@
+.chatUserListBG {
+  position: relative;
+}
+.chatUserListBG::before {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background: #b3d4fc;
+  opacity: 0.5;
+  border-radius: 6px 0 0px 6px;
+  z-index: 0;
+}
+.chatSearch {
+  border: 1px solid #ced4da;
+  background: #fafafa;
+  border-radius: 20px;
+  padding: 0.375rem 0.75rem;
+}
+.chatSearch > input {
+  background: #fafafa;
+  border: none;
+  padding: 0;
+}
+.chatSearch > input:focus {
+  background: #fafafa;
+}
+.chatUserList {
+  cursor: pointer;
+  padding: 10px;
+  transition: ease-in-out 0.3ms;
+}
+.chatUserList:hover {
+  border-left: 5px solid #b3d4fc;
+  background: rgba(80, 80, 80, 0.05);
+}
+.chatUserSelect {
+  border-left: 5px solid #b3d4fc;
+  background: rgba(80, 80, 80, 0.05);
+}
+.userChatImage > img {
+  position: relative;
+  max-width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+.userChatActive {
+  position: absolute;
+  background: #cddc39;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+.userChatInActive {
+  position: absolute;
+  background: #f34770;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+.userMessageHeader {
+  position: relative;
+}
+.userMessageHeader p::after {
+  position: absolute;
+  content: " ";
+  background: #cddc39;
+  left: 0;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+.userMessageHeader > img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 4px 60px -10px #039be5 !important;
+}
+.undrawMessages {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.messageBody {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.messageBody::-webkit-scrollbar {
+  width: 10px;
+}
+
+.messageBody::-webkit-scrollbar-thumb {
+  background: #c5c4c4;
+  border-radius: 40px;
+}
+
+.messageBody::-webkit-scrollbar-track {
+  background-color: #ececec;
+}
+.userMessageBody > img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.userMessageBody > span {
+  position: relative;
+  background: #e0f2f1;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 0 10px 10px 10px;
+  box-shadow: 0px 1px 3px 0px rgb(80 80 80 / 20%),
+    0px 1px 1px 0px rgb(80 80 80 / 14%), 0px 2px 1px -1px rgb(80 80 80 / 12%);
+}
+.userMessageBody > span::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: -9px;
+  border-right: 10px solid #e0f2f1;
+  border-bottom: 15px solid transparent;
+}
+.adminMessageBody {
+  justify-content: end;
+}
+.adminMessageBody > img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.adminMessageBody > span {
+  position: relative;
+  background: #e3f2fd;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px 0px 10px 10px;
+  box-shadow: 0px 1px 3px 0px rgb(80 80 80 / 20%),
+    0px 1px 1px 0px rgb(80 80 80 / 14%), 0px 2px 1px -1px rgb(80 80 80 / 12%);
+}
+.adminMessageBody > span::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: -9px;
+  border-left: 10px solid #e3f2fd;
+  border-bottom: 15px solid transparent;
+}
+.sendMessageBtn {
+  position: relative;
+  top: 0px;
+  left: 0;
+  border-radius: 30px;
+  padding: 10px;
+  border: 1px solid #fafafa;
+  background: #fff;
+  box-shadow: 0px 1px 3px 0px rgb(80 80 80 / 20%),
+    0px 1px 1px 0px rgb(80 80 80 / 14%), 0px 2px 1px -1px rgb(80 80 80 / 12%);
+}
+.sendMessageBtn > input {
+  width: 100%;
+  border: none;
+  outline-width: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.sendMessageBtn > button {
+  background: transparent;
+  border: none;
+  color: #9999;
+  transition: ease-in-out 0.3s;
+}
+.sendMessageBtn > button:hover {
+  color: #02344f;
+}
+.replyBtn {
+  border: 1px solid #02344f;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  transition: ease 0.3s;
+}
+.replyBtn:hover {
+  border: 1px solid #02344f;
+  color: #fff;
+  background-color: #02344f;
+}
