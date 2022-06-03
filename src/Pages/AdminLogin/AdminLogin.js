@@ -49,19 +49,22 @@ const AdminLogin = () => {
     <section id={`${style.adminLogin}`}>
       <div className="container">
         <div
-          className="row gx-0 justify-content-center align-items-center"
+          className="d-flex gx-0 justify-content-center align-items-center"
           style={{ height: "900px" }}
         >
-          <div className="col-11">
-            <div className="row gx-0">
-              <div className="col-6 d-flex justify-content-center align-items-center">
+          <div className="w-50">
+            <div className="row gx-0 text-center">
+              {/* <div className="col-6 d-flex justify-content-center align-items-center">
                 <div className={`${style.adminLoginImage}`}>
                   <img src={loginImage} alt="admin login page" />
                 </div>
-              </div>
+              </div> */}
 
-              <div className={`col-6 p-5 ${style.form}`}>
-                <Card className={`p-5 w-100`}>
+              <div className={`col p-5 ${style.form}`}>
+                <Card
+                  className={`p-5 w-100`}
+                  style={{ background: "rgba(255, 255, 255, .4)" }}
+                >
                   <h4 className="boldh4 mb-4">Admin Login</h4>
                   <form onSubmit={handleSubmit(onSubmit)} className="formStyle">
                     {/* email */}
