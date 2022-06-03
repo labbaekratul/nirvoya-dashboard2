@@ -1,16 +1,18 @@
 import GroupIcon from "@material-ui/icons/Group";
-import React from 'react';
-import { Link } from 'react-router-dom';
-import DoughnutChat from '../../Component/Chart/DoughnutChat';
-import EventTriggers from '../../Component/Chart/EventTriggers';
-import LineChart from '../../Component/Chart/LineChart';
-import LineChartStacked from '../../Component/Chart/LineChartStacked';
-import PieChart from '../../Component/Chart/PieChart';
-import PolarChart from '../../Component/Chart/PolarChart';
-import VerticalBarChart from '../../Component/Chart/VerticalBarChart';
-import HeaderPart from '../../Component/HeaderPart/HeaderPart';
-import SideBar from '../../Component/SideBar/SideBar';
-import TopBar from '../../Component/TopBar/TopBar';
+import React from "react";
+import { Link } from "react-router-dom";
+import DoughnutChat from "../../Component/Chart/DoughnutChat";
+import EventTriggers from "../../Component/Chart/EventTriggers";
+import LineChart from "../../Component/Chart/LineChart";
+import LineChartStacked from "../../Component/Chart/LineChartStacked";
+import PieChart from "../../Component/Chart/PieChart";
+import PolarChart from "../../Component/Chart/PolarChart";
+import VerticalBarChart from "../../Component/Chart/VerticalBarChart";
+import HeaderPart from "../../Component/HeaderPart/HeaderPart";
+import SideBar from "../../Component/SideBar/SideBar";
+import TopBar from "../../Component/TopBar/TopBar";
+import Feeds from "./Feeds";
+import SalesChart from "./SalesChart";
 
 const Dashboard = () => {
   return (
@@ -41,7 +43,7 @@ const Dashboard = () => {
                     </ol>
                   </nav>
                 </div>
-                
+
                 <div className="col-md-12 bg-white rounded-3 shadow-lg p-4">
                   <h3 className="mb-3">Dashboard</h3>
                   <div className="row">
@@ -135,35 +137,17 @@ const Dashboard = () => {
               <div className="row">
                 {/* EventTriggers */}
                 <div className="col-6 mt-3 bg-white rounded-3 shadow-lg p-4">
-                  <EventTriggers />
+                  {/* <EventTriggers /> */}
+                  <SalesChart />
                 </div>
                 {/* VerticalBarChart */}
                 <div className="col-6 mt-3 bg-white rounded-3 shadow-lg p-4">
-                  <VerticalBarChart />
-                </div>
-                {/* LineChart */}
-                <div className="col-6 mt-3 bg-white rounded-3 shadow-lg p-4">
-                  <LineChart />
-                </div>
-                <div className="col-6 mt-3 bg-white rounded-3 shadow-lg p-4">
-                  <LineChartStacked />
-                </div>
-                {/* DoughnutChat */}
-                <div className="col-4 mt-3 bg-white rounded-3 shadow-lg p-4 DoughnutChat justify-content-center d-flex">
-                  <DoughnutChat />
-                </div>
-                {/* PieChart */}
-                <div className="col-4 mt-3 bg-white rounded-3 shadow-lg p-4 DoughnutChat justify-content-center d-flex">
-                  <PieChart />
-                </div>
-                {/* PolarChart */}
-                <div className="col-4 mt-3 bg-white rounded-3 shadow-lg p-4 DoughnutChat justify-content-center d-flex">
-                  <PolarChart />
+                  {/* <VerticalBarChart /> */}
+                  <Feeds />
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

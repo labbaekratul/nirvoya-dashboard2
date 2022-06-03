@@ -1,13 +1,13 @@
-import { Card } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
-import { FaSave } from 'react-icons/fa';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory, useParams } from 'react-router-dom';
-import Breadcrumb from '../../Component/Breadcrumb/Breadcrumb';
-import HeaderPart from '../../Component/HeaderPart/HeaderPart';
-import SideBar from '../../Component/SideBar/SideBar';
-import TopBar from '../../Component/TopBar/TopBar';
-import { detailsAdmin, updateAdmin } from '../../redux/Actions/adminActions';
+import { Card } from "@material-ui/core";
+import React, { useEffect, useState } from "react";
+import { FaSave } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useHistory, useParams } from "react-router-dom";
+import Breadcrumb from "../../Component/Breadcrumb/Breadcrumb";
+import HeaderPart from "../../Component/HeaderPart/HeaderPart";
+import SideBar from "../../Component/SideBar/SideBar";
+import TopBar from "../../Component/TopBar/TopBar";
+import { detailsAdmin, updateAdmin } from "../../redux/Actions/adminActions";
 
 const Edit = () => {
   const { adminId } = useParams();

@@ -85,7 +85,7 @@ function App() {
         <AdminPrivateRoute component={BlogCreate} path="/blog/create" />
         <AdminPrivateRoute component={BlogEdit} path="/blog/:blogId/edit" />
         {/* entrepreneurs */}
-        <AdminPrivateRoute component={Entrepreneurs} path="/entrepreneurs" />
+        <AdminPrivateRoute component={Entrepreneurs} path="/sellers" />
         <AdminPrivateRoute
           component={EntrepreneurCreate}
           path="/entrepreneur/create"
