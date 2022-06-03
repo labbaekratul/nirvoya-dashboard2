@@ -1,0 +1,39 @@
+[debug] [2022-06-02T23:59:11.927Z] ----------------------------------------------------------------------
+[debug] [2022-06-02T23:59:11.928Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Ratul\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-06-02T23:59:11.928Z] CLI Version:   11.0.1
+[debug] [2022-06-02T23:59:11.928Z] Platform:      win32
+[debug] [2022-06-02T23:59:11.928Z] Node Version:  v16.15.0
+[debug] [2022-06-02T23:59:11.929Z] Time:          Fri Jun 03 2022 05:59:11 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-06-02T23:59:11.929Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-06-02T23:59:11.933Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-06-02T23:59:11.933Z] > authorizing via signed-in user (labbaekratul@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Coding\Project-nirvoya\nirvoya-dashboard2
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-06-03T00:00:14.380Z] Using project from CLI flag: oikko-admin-dashboard
+[debug] [2022-06-03T00:00:14.381Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/oikko-admin-dashboard [none]
+[debug] [2022-06-03T00:00:15.113Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/oikko-admin-dashboard 403
+[debug] [2022-06-03T00:00:15.113Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/oikko-admin-dashboard {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-06-03T00:00:15.113Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-06-03T00:00:15.277Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (C:\Users\Ratul\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:47:12)
+    at RetryOperation._fn (C:\Users\Ratul\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:286:39)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project oikko-admin-dashboard. Please make sure the project exists and your account has permission to access it.
