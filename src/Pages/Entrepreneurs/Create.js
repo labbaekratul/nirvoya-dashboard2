@@ -372,7 +372,7 @@ const EntrepreneurCreate = () => {
                                 autoFocus
                               />
                               <label>
-                                Entrepreneurs Name
+                                Seller Name
                                 <span className="text-danger">*</span>
                               </label>
                               <span className="text-danger">

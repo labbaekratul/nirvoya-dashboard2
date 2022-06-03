@@ -596,7 +596,7 @@ const Edit = () => {
                                 ))}
                               </select>
                               <label>
-                                Entrepreneur{" "}
+                                Seller{" "}
                                 <span className="text-danger fs-5"> *</span>
                               </label>
                             </div>

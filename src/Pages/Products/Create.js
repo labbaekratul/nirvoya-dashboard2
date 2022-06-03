@@ -484,8 +484,7 @@ const Create = () => {
                             {/* Entrepreneurs */}
                             <div className="form-group">
                               <label className="mb-1">
-                                Entrepreneurs{" "}
-                                <span className="text-danger">*</span>
+                                Seller <span className="text-danger">*</span>
                               </label>
                               <Controller
                                 name="entrepreneurs"

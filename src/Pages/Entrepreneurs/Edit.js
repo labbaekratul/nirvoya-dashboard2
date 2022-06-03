@@ -407,7 +407,7 @@ const EntrepreneurEdit = () => {
                                 autoFocus
                               />
                               <label>
-                                Entrepreneurs Name
+                                Seller Name
                                 <span className="text-danger"> *</span>
                               </label>
                             </div>
