@@ -84,7 +84,10 @@ const SideBar = () => {
 
   useEffect(() => {
     dispatch(detailsAdmin(adminInfo?._id));
-  }, [dispatch, adminInfo]);
+    if (adminInfo === null) {
+      history.push("/login");
+    }
+  }, [dispatch, adminInfo, history]);
 
   const handleDropDown = (data) => {
     setDropDownShow(data);
