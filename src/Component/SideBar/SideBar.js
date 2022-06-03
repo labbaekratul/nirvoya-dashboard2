@@ -197,11 +197,7 @@ const SideBar = () => {
             <MenuLink to="/sizes" label="Sizes" icon={<FcRuler />} />
             <MenuLink to="/blogs" label="Blogs" icon={<FcNews />} />
 
-            <MenuLink
-              to="/entrepreneurs"
-              label="Entrepreneurs"
-              icon={<FcPortraitMode />}
-            />
+            <MenuLink to="/sellers" label="Sellers" icon={<FcPortraitMode />} />
             <MenuLink to="/banners" label="Banners" icon={<FcPicture />} />
             <MenuLink
               to="/admins"
