@@ -215,6 +215,7 @@ export const users =
       const { data } = await Axios.get(
         `https://nirvoya.herokuapp.com/api/user?phone=${phone}`
       );
+      console.log(data);
       dispatch({
         type: ALL_USER_SUCCESS,
         payload: data,

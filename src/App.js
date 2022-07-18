@@ -37,6 +37,7 @@ import Sizes from "./Pages/Sizes/Sizes";
 import SupportReply from "./Pages/Supports/SupportReply";
 import Supports from "./Pages/Supports/Supports";
 import UserCreate from "./Pages/Users/Create";
+import Edit from "./Pages/Users/Edit";
 import Users from "./Pages/Users/Users";
 
 function App() {
@@ -50,7 +51,7 @@ function App() {
         {/* user list */}
         <AdminPrivateRoute component={Users} path="/users" />
         <AdminPrivateRoute component={UserCreate} path="/user/create" />
-        <AdminPrivateRoute component={OrderDetails} path="/user/:userId/edit" />
+        <AdminPrivateRoute component={Edit} path="/user/:userId/edit" />
         {/* order */}
         <AdminPrivateRoute component={Orders} path="/orders" />
         <AdminPrivateRoute component={OrderCreate} path="/order/create" />

@@ -1,13 +1,14 @@
-import { Card } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
-import { FaSave } from 'react-icons/fa';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
-import Breadcrumb from '../../Component/Breadcrumb/Breadcrumb';
-import HeaderPart from '../../Component/HeaderPart/HeaderPart';
-import SideBar from '../../Component/SideBar/SideBar';
-import TopBar from '../../Component/TopBar/TopBar';
-import { updateUser, userDetails } from '../../redux/Actions/userAuthAction';
+import { Card } from "@material-ui/core";
+import React, { useEffect, useState } from "react";
+import { FaSave } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory, useParams } from "react-router-dom";
+import Breadcrumb from "../../Component/Breadcrumb/Breadcrumb";
+import HeaderPart from "../../Component/HeaderPart/HeaderPart";
+import SideBar from "../../Component/SideBar/SideBar";
+import TopBar from "../../Component/TopBar/TopBar";
+import { updateUser, userDetails } from "../../redux/Actions/userAuthAction";
+import { USER_DETAILS_RESET } from "../../redux/Constants/userAuthConstant";
 
 const Edit = () => {
   const { userId } = useParams();
@@ -53,11 +54,12 @@ const Edit = () => {
 
   useEffect(() => {
     if (success) {
-      history.push("/admin/users");
+      dispatch({ type: USER_DETAILS_RESET });
+      history.push("/users");
       setAlertMessage(false);
       setSaveButton("Save...");
     }
-  }, [success, history]);
+  }, [success, history, dispatch]);
 
   return (
     <section>

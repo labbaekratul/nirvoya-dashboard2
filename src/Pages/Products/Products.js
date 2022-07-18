@@ -14,6 +14,7 @@ import {
   PRODUCT_DELETE_RESET,
   PRODUCT_UPDATE_RESET,
 } from "../../redux/Constants/productContants";
+import { CSVLink } from "react-csv";
 
 const Products = () => {
   const history = useHistory();
@@ -60,7 +61,7 @@ const Products = () => {
       allProduct({
         name: name !== "all" ? name : "",
         pageNumber: data,
-        pageSize: 10,
+        pageSize: 50,
       })
     );
   }, [dispatch, history, successDelete, successCreate, successUpdate]);
@@ -72,6 +73,8 @@ const Products = () => {
         image: data.displayImage.data?.url,
         name: data.name,
         sellPrice: `${data.sellPrice} Tk`,
+        productCode: data.productCode,
+        countInStock: data.countInStock,
       })),
     [products]
   );
@@ -97,8 +100,9 @@ const Products = () => {
   };
 
   // search button
-  const handleSearchButton = () => {
-    dispatch(allProduct({ name: productSearch }));
+  const handleSearchButton = (e) => {
+    e.preventDefault();
+    dispatch(allProduct({ productCode: productSearch }));
   };
 
   // clear button
@@ -135,7 +139,7 @@ const Products = () => {
                       </div>
                       <button
                         onClick={handleSearchButton}
-                        type="button"
+                        type="submit"
                         className="searchButton"
                       >
                         Search
@@ -152,6 +156,13 @@ const Products = () => {
                     <Link to={"/product/create"} className="myButton">
                       <BsPlus style={{ fontSize: "23px" }} /> Create
                     </Link>
+                    {data ? (
+                      <CSVLink data={data} className="btn btn-info">
+                        CSV
+                      </CSVLink>
+                    ) : (
+                      "Loading.. ."
+                    )}
                   </div>
 
                   <table className="table table-hover table-bordered">
@@ -159,6 +170,8 @@ const Products = () => {
                       <tr>
                         <th scope="col">Image</th>
                         <th scope="col">Name</th>
+                        <th scope="col">ProductCode</th>
+                        <th scope="col">countInStock</th>
                         <th scope="col">SellPrice</th>
                         <th scope="col">Actions</th>
                       </tr>
@@ -185,6 +198,12 @@ const Products = () => {
                             </th>
 
                             <td>{product.name}</td>
+                            <td>{product.productCode}</td>
+                            <td>
+                              {product.countInStock
+                                ? product.countInStock
+                                : "TBD"}
+                            </td>
                             <td>৳ {product.sellPrice}</td>
                             <td>
                               <Link

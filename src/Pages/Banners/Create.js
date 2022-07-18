@@ -1,4 +1,5 @@
 import { Card, CircularProgress } from "@material-ui/core";
+import axios from "axios";
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -25,6 +26,18 @@ const Create = () => {
   const [saveButton, setSaveButton] = useState("Save");
   const [image, setImage] = useState(null);
   const [loadingUpload, setLoadingUpload] = useState(false);
+  const [category, setCategory] = useState([]);
+  const [url, setUrl] = useState("");
+
+  useEffect(() => {
+    const getCategory = async () => {
+      const { data } = await axios.get(
+        `https://nirvoya.herokuapp.com/api/category`
+      );
+      setCategory(data.categoryList);
+    };
+    getCategory();
+  }, []);
 
   const {
     register,
@@ -83,7 +96,7 @@ const Create = () => {
   const onSubmit = (data) => {
     const bannerData = {
       title: data.title,
-      url: data.url,
+      url,
       orderby: data.orderby,
       status: data.status,
       image: image,
@@ -147,15 +160,25 @@ const Create = () => {
 
                         {/* url */}
                         <div className="col-6">
+                          <label>Choose Category</label>
                           <div className="form-floating mb-3">
-                            <input
+                            {/* <input
                               {...register("url")}
                               type="text"
                               className="form-control"
                               placeholder="URL"
                               name="url"
-                            />
-                            <label>URL</label>
+                            /> */}
+
+                            <select onChange={(e) => setUrl(e.target.value)}>
+                              {category
+                                ? category?.map((x) => (
+                                    <option value={x._id} key={x._id}>
+                                      {x.name}
+                                    </option>
+                                  ))
+                                : "loading"}
+                            </select>
                           </div>
                         </div>
                       </div>

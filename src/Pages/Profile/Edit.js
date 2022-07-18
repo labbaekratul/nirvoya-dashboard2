@@ -13,9 +13,11 @@ import TopBar from "../../Component/TopBar/TopBar";
 import { detailsAdmin, updateAdmin } from "../../redux/Actions/adminActions";
 
 const Edit = () => {
-  const { adminId } = useParams();
+  const { profileId } = useParams();
   const history = useHistory();
   const dispatch = useDispatch();
+
+  console.log(useParams());
 
   // redux store call
   const adminDetailsData = useSelector((state) => state.adminDetails);
@@ -36,8 +38,8 @@ const Edit = () => {
 
   // react action
   useEffect(() => {
-    if (!adminDetails || adminDetails._id !== adminId) {
-      dispatch(detailsAdmin(adminId));
+    if (!adminDetails || adminDetails._id !== profileId) {
+      dispatch(detailsAdmin(profileId));
     } else {
       setFirstName(adminDetails.firstName);
       setLastName(adminDetails.lastName);
@@ -48,7 +50,7 @@ const Edit = () => {
       setRole(adminDetails.role);
       setAddress(adminDetails.address);
     }
-  }, [dispatch, adminDetails, adminId]);
+  }, [dispatch, adminDetails, profileId]);
 
   // image upload
   const displayImageHandle = async (e) => {

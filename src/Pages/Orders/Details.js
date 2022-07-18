@@ -1,41 +1,41 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import {
   AiOutlineEnvironment,
   AiOutlineMail,
   AiOutlinePhone,
   AiOutlinePrinter,
   AiOutlineSave,
-  AiOutlineUser
+  AiOutlineUser,
 } from "react-icons/ai";
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
-import Breadcrumb from '../../Component/Breadcrumb/Breadcrumb';
-import HeaderPart from '../../Component/HeaderPart/HeaderPart';
-import SideBar from '../../Component/SideBar/SideBar';
-import TopBar from '../../Component/TopBar/TopBar';
-import { detailsOrder, updateOrder } from '../../redux/Actions/orderActions';
-import styles from './order.module.css';
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useHistory, useParams } from "react-router-dom";
+import Breadcrumb from "../../Component/Breadcrumb/Breadcrumb";
+import HeaderPart from "../../Component/HeaderPart/HeaderPart";
+import SideBar from "../../Component/SideBar/SideBar";
+import TopBar from "../../Component/TopBar/TopBar";
+import { detailsOrder, updateOrder } from "../../redux/Actions/orderActions";
+import styles from "./order.module.css";
 
 const Details = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const { orderId } = useParams();
 
   // redux store
   const OrderDetails = useSelector((state) => state.orderDetails);
   const { orderDetails } = OrderDetails;
+  const { success } = useSelector((state) => state.orderUpdate);
 
   // react hook
-  const [changeStatus, setChangeStatus] = useState([]);
+  const [changeStatus, setChangeStatus] = useState(orderDetails?.orderStatus);
 
   useEffect(() => {
     dispatch(detailsOrder(orderId));
   }, [dispatch, orderId]);
 
   const handleChange = (data) => {
-    console.log(data);
-  }
-
-  console.log(changeStatus);
+    setChangeStatus(data);
+  };
 
   // onsubmit handler
   const submitHandler = (e) => {
@@ -48,6 +48,13 @@ const Details = () => {
     );
   };
 
+  useEffect(() => {
+    if (success) {
+      dispatch(detailsOrder(orderId));
+      history.push("/orders");
+    }
+  }, [orderId, history, success]);
+
   return (
     <section>
       <div className="container-fluid">
@@ -59,12 +66,9 @@ const Details = () => {
 
             <div className="ds_body w-100">
               <div className="row">
-                <Breadcrumb
-                  title="Order Details"
-                  url="/orders"
-                ></Breadcrumb>
+                <Breadcrumb title="Order Details" url="/orders"></Breadcrumb>
               </div>
-              
+
               {orderDetails ? (
                 <div className="row">
                   <div className="col-md-8">
@@ -90,7 +94,7 @@ const Details = () => {
                       </div>
                       <hr />
                       <h5>Product Information</h5>
-                      
+
                       <div className="table-responsive">
                         <table className="table table-borderless align-middle">
                           <thead>
@@ -100,10 +104,9 @@ const Details = () => {
                               <th>Quantity</th>
                               <th>Discounty</th>
                               <th>Amount</th>
-                              <th>Status</th>
                             </tr>
                           </thead>
-                          
+
                           {orderDetails?.orderItems?.map((x) => (
                             <tbody key={x._id}>
                               <tr>
@@ -127,16 +130,6 @@ const Details = () => {
                                 </td>
                                 <td>{x.discount ? x.discount : 0} %</td>
                                 <td>৳ {x.price * x.qty}</td>
-                                <td>
-                                  <select onChange={(e) => handleChange({value: e.target.value, id: x._id})}>
-                                    <option>Pending</option>
-                                    <option>Processing</option>
-                                    <option>Picked</option>
-                                    <option>Canceled</option>
-                                    <option>Delayed</option>
-                                    <option>Delivered</option>
-                                  </select>
-                                </td>
                               </tr>
                             </tbody>
                           ))}
@@ -172,9 +165,29 @@ const Details = () => {
                             </table>
                           </div>
                         </div>
+                        <div>
+                          <h6>Order Status</h6>
+                          <td>
+                            <select
+                              onChange={(e) => handleChange(e.target.value)}
+                              value={changeStatus}
+                            >
+                              <option>Pending</option>
+                              <option>Processing</option>
+                              <option>Picked</option>
+                              <option>Canceled</option>
+                              <option>Delayed</option>
+                              <option>Delivered</option>
+                            </select>
+                          </td>
+                        </div>
                         <hr />
                         <div className="text-end">
-                          <button type="button" className="myButton me-3">
+                          <button
+                            type="button"
+                            className="myButton me-3"
+                            onClick={() => window.print()}
+                          >
                             <AiOutlinePrinter /> Print
                           </button>
                           <button type="submit" className="myButton">
@@ -217,7 +230,7 @@ const Details = () => {
                     </div>
                     {/* entrepreneur infomation */}
                     <div className="bg-white rounded-3 shadow-lg p-4 mt-4">
-                      <h5>Entrepreneur Info</h5>
+                      <h5>Order Address Info</h5>
                       <hr />
                       <div
                         className={`d-flex align-items-center my-4 ${styles.entrepreneur}`}
@@ -233,11 +246,12 @@ const Details = () => {
                             className="d-block mb-2"
                             to="/entrepreneur/details/6157f5aa1b81751b6c14e349"
                           >
-                            Azizur Rahman
+                            {orderDetails &&
+                              orderDetails?.shippingAddress?.fullName}
                           </Link>
                           <span className="text-secondary">
-                            আজিজুর রহমান তাঁর পূর্বপুরুষদের ঐতিহ্য লালন করে
-                            জামদানি শাড়ি তৈরির শিক্ষা গ্রহণ করেন পরিবার...
+                            {orderDetails &&
+                              orderDetails?.shippingAddress?.address}
                           </span>
                         </div>
                       </div>
@@ -246,19 +260,26 @@ const Details = () => {
                         <p className="me-3">
                           <AiOutlineMail style={{ fontSize: "20px" }} />
                         </p>
-                        <p>azizurrahman202@gmail.com</p>
+                        <p>
+                          {orderDetails && orderDetails?.shippingAddress?.email}
+                        </p>
                       </div>
                       <div className="d-flex align-items-center">
                         <p className="me-3">
                           <AiOutlinePhone style={{ fontSize: "20px" }} />
                         </p>
-                        <p>01854540050</p>
+                        <p>
+                          {orderDetails && orderDetails?.shippingAddress?.phone}
+                        </p>
                       </div>
                       <div className="d-flex align-items-center">
                         <p className="me-3">
                           <AiOutlineEnvironment style={{ fontSize: "20px" }} />
                         </p>
-                        <p>Dhaka,bangladesh.</p>
+                        <p>
+                          {orderDetails &&
+                            orderDetails?.shippingAddress?.deliveryArea}
+                        </p>
                       </div>
                     </div>
                   </div>

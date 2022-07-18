@@ -13,6 +13,7 @@ import {
   USER_REGISTER_RESET,
   USER_UPDATE_RESET,
 } from "../../redux/Constants/userAuthConstant";
+import { CSVLink } from "react-csv";
 
 const Users = () => {
   const dispatch = useDispatch();
@@ -146,6 +147,14 @@ const Users = () => {
                     <Link to={"/user/create"} className="myButton">
                       <BsPlus style={{ fontSize: "23px" }} /> Create
                     </Link>
+
+                    {allUsers?.users ? (
+                      <CSVLink data={allUsers?.users} className="btn btn-info">
+                        CSV
+                      </CSVLink>
+                    ) : (
+                      "Loading.. ."
+                    )}
                   </div>
 
                   <table className="table table-hover table-bordered">
@@ -159,31 +168,33 @@ const Users = () => {
                     </thead>
 
                     <tbody style={{ borderTop: 0 }}>
-                      {allUsers?.users?.map((user) => {
-                        return (
-                          <tr key={user.id}>
-                            <td className="text-capitalize">{user.name}</td>
-                            <td>{user.email}</td>
-                            <td>{user.phone}</td>
-                            <td>
-                              <Link
-                                to={`/user/${user._id}/edit`}
-                                className="me-1 adminBtnButton"
-                              >
-                                <BsPencil className="pencilButton" />
-                              </Link>
+                      {allUsers
+                        ? allUsers?.users?.map((user) => {
+                            return (
+                              <tr key={user.id}>
+                                <td className="text-capitalize">{user.name}</td>
+                                <td>{user.email}</td>
+                                <td>{user.phone}</td>
+                                <td>
+                                  <Link
+                                    to={`/user/${user?._id}/edit`}
+                                    className="me-1 adminBtnButton"
+                                  >
+                                    <BsPencil className="pencilButton" />
+                                  </Link>
 
-                              <button
-                                className="adminBtnButton"
-                                type="button"
-                                onClick={() => handleDelete(user._id)}
-                              >
-                                <BsTrash className="trashButton" />
-                              </button>
-                            </td>
-                          </tr>
-                        );
-                      })}
+                                  <button
+                                    className="adminBtnButton"
+                                    type="button"
+                                    onClick={() => handleDelete(user._id)}
+                                  >
+                                    <BsTrash className="trashButton" />
+                                  </button>
+                                </td>
+                              </tr>
+                            );
+                          })
+                        : "Loading"}
                     </tbody>
                   </table>
 
